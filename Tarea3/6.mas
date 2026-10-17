@@ -1,0 +1,31 @@
+// Programa que toma una serie de cinco localidades de memoria, y a cada una suma un valor, la primera 1, la segunda 2, etc.
+
+ORG 100
+
+Loop,  LoadI ptr
+       Add k
+       StoreI ptr
+
+       Load ptr
+       Add ONE
+       Store ptr
+
+       Load k
+       Add ONE
+       Store k
+
+       Subt SIX
+       Skipcond 400
+       Jump Loop
+       Halt
+
+ONE,   DEC 1
+SIX,   DEC 6
+k,     DEC 1
+ptr,   HEX 011
+
+Datos, DEC 10
+       DEC 20
+       DEC 30
+       DEC 40
+       DEC 50

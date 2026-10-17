@@ -1,0 +1,131 @@
+Input
+Store opt
+Input
+Store A
+Input
+Store B
+
+Load opt
+
+// 4: División
+Subt FOUR
+SkipCond 0C00
+Jump div
+Add FOUR
+// 3: Multiplicación
+Subt THREE
+SkipCond 0C00
+Jump mult
+Add THREE
+// 2: Resta
+subt TWO
+SkipCond 0C00
+Jump sub
+Add TWO
+// 1: Suma
+subt ONE
+SkipCond 0C00
+Jump sum
+Add ONE
+// Opción inválida -> regresar 0
+Load ZERO
+Store total
+Jump result
+
+// SUMA
+sum, Load A
+Add B
+Store total
+Jump result
+
+// RESTA
+sub, Load A
+Subt B
+Store total
+Jump result
+
+// MULTIPLICACIÓN
+mult, Load B
+SkipCond 000
+Jump mult_pos
+
+Load ZERO
+Subt A
+Store A
+
+Load ZERO
+Subt B
+Store B
+
+mult_pos, Load B
+SkipCond 800
+Jump total
+
+mult_loop, Load total
+Add A
+Store total
+Load B
+Subt ONE
+Store B
+SkipCond 400
+Jump mult_loop
+Jump result
+
+// DIVISIÓN
+div, Load A
+SkipCond 000
+Jump div_checkB
+Load ZERO
+Subt A
+Store A
+Load ONE
+Store negA
+
+div_checkB, Load B
+SkipCond 000
+Jump div_loop
+Load ZERO
+Subt B
+Store B
+Load ONE
+Store negB
+
+div_loop, Load A
+Subt B
+SkipCond 000
+Jump restar
+Jump div_sign
+
+restar, Store A
+Load total
+Add ONE
+Store total
+Jump div_loop
+
+div_sign, Load negA
+Subt negB
+SkipCond 0C00
+Jump result
+
+Load ZERO
+Subt total
+Store total
+
+// RESULTADO
+result, Load total
+Output
+Halt
+
+// DEFINICIONES
+opt, DEC 0
+A, DEC 0
+B, DEC 0
+total, DEC 0
+negA, DEC 0
+negB, DEC 0
+
+ZERO, DEC 0
+ONE, DEC 1
+TWO, DEC 2
+THREE, DEC 3
+FOUR, DEC 4

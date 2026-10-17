@@ -1,0 +1,32 @@
+// Longitud de un string
+Get, LoadI ptr
+SkipCond 400
+Jump Sum
+Load n
+Output
+Halt
+
+Sum, Load n
+Add ONE
+Store n
+Load ptr
+Add ONE
+Store ptr
+Jump Get
+
+ONE, DEC 1
+n, DEC 0
+ptr, HEX 010 // Se obtiene al final, tras hacer assemble
+String, Dec 072 // 'H'
+        Dec 101 // 'e'
+        Dec 108 // 'l'
+        Dec 108 // 'l'
+        Dec 111 // 'o'
+        Dec 032 // [space]
+        Dec 119 // 'w'
+        Dec 111 // 'o'
+        Dec 114 // 'r'
+        Dec 108 // 'l'
+        Dec 100 // 'd'
+        Dec 033 // '!'
+        Dec 000 // [null]

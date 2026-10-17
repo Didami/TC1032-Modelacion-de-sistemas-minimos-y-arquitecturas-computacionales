@@ -1,0 +1,25 @@
+// Programa que toma una serie de 6 localidades de memoria y suma un valor incremental (1, 2, 3, 4, 5)
+ORG 100
+Input
+Store val
+loop, Load val
+StoreI direc1
+Load contador
+Add ONE
+Store contador
+Load direc1
+Add ONE
+Store direc1
+Load val
+Add ONE
+Store val
+Load contador
+Subt SIX
+SkipCond 400
+Jump loop
+Halt
+direc1, HEX A00
+ONE, DEC 1
+contador, DEC 0
+val, DEC 0
+SIX, DEC 6

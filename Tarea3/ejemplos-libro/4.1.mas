@@ -1,0 +1,32 @@
+// Diego Flores Álvarez - A01788809
+// Miguel Tejero de la Fuente - A01788818
+// Gabriel Melnik Gru - A01787697
+// Ejemplo 4.1: Suma de un arreglo de 5 elementos
+Load addr
+Store next
+Load num
+Subt one
+Store ctr
+loop, Load sum
+AddI next
+Store sum
+Load next
+Add one
+Store next
+Load ctr
+Subt one
+Store ctr
+SkipCond 000
+Jump loop
+Halt
+addr, HEX 117
+next, HEX 0
+num, DEC 5
+sum, DEC 0
+ctr, HEX 0
+one, DEC 1
+DEC 10
+DEC 15
+DEC 20
+DEC 25
+DEC 30

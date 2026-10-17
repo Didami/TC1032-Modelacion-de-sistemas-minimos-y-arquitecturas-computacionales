@@ -1,0 +1,29 @@
+// Diego Flores Álvarez - A01788809
+// Miguel Tejero de la Fuente - A01788818
+// Gabriel Melnik Gru - A01787697
+// Ejemplo 4.3: lectura y despliegue de una cadena de caracteres almacenada en memoria
+ORG 100
+Getch, LoadI Chptr
+Skipcond 400
+Jump Outp
+Halt
+Outp, Output
+Load Chptr
+Add One
+Store Chptr
+Jump Getch
+One, HEX 0001
+Chptr, HEX 10B
+String, DEC 072
+DEC 101
+DEC 108
+DEC 108
+DEC 111
+DEC 032
+DEC 119
+DEC 111
+DEC 114
+DEC 108
+DEC 100
+DEC 033
+DEC 000

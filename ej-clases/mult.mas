@@ -1,0 +1,40 @@
+// A * B
+Input
+Store A
+Input
+Store B
+
+Load B
+SkipCond 000
+Jump positivo
+
+Load zero
+Subt A
+Store A
+
+Load zero
+Subt B
+Store B
+
+positivo, Load B
+SkipCond 800
+Jump done
+
+loop, Load total
+Add A
+Store total
+Load B
+Subt uno
+Store B
+SkipCond 400
+Jump loop
+
+done, Load total
+Output
+Halt
+
+A, DEC 0
+B, DEC 0
+total, DEC 0
+uno, DEC 1
+zero, DEC 0

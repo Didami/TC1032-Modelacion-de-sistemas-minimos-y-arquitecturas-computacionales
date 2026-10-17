@@ -1,0 +1,18 @@
+// Programa 2: A - B = C
+
+Input
+Store A
+
+Input
+Store B
+
+Load A
+Subt B
+Store C
+Output
+
+Halt
+
+A, HEX AAAA
+B, HEX BBBB
+C, HEX CCCC

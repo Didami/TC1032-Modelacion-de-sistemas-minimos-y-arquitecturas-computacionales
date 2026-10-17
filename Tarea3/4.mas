@@ -1,0 +1,22 @@
+// Invertir 4 localidades de memoria
+LoadI Loc1
+Store Temp
+LoadI Loc4
+StoreI Loc1
+Load Temp
+StoreI Loc4
+
+LoadI Loc2
+Store Temp
+LoadI Loc3
+StoreI Loc2
+Load Temp
+StoreI Loc3
+
+Halt
+
+Loc1, HEX 020
+Loc2, HEX 021
+Loc3, HEX 022
+Loc4, HEX 023
+Temp, DEC 0

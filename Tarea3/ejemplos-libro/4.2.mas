@@ -1,0 +1,18 @@
+// Diego Flores Álvarez - A01788809
+// Miguel Tejero de la Fuente - A01788818
+// Gabriel Melnik Gru - A01787697
+// Ejemplo 4.2: Estructura condicional If-Then-Else
+If,    Load X
+       Subt Y
+       SkipCond 400
+       Jump Else
+Then,  Load X
+       Add X
+       Store X
+       Jump Endif
+Else,  Load Y
+       Subt X
+       Store Y
+Endif, Halt
+X,      DEC 12
+Y,      DEC 20

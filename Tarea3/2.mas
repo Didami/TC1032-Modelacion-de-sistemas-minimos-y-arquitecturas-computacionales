@@ -1,0 +1,29 @@
+// Y = X - 2*A - 3*B - 4*C
+Input 
+Store X
+Input
+Store A
+Input
+Store B
+Input
+Store C
+
+Load X
+Subt A
+Subt A
+Subt B
+Subt B
+Subt B
+Subt C
+Subt C
+Subt C
+Subt C
+
+Output
+Halt
+
+Y, DEC 0
+X, DEC 0
+A, DEC 0
+B, DEC 0
+C, DEC 0
