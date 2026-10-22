@@ -1,0 +1,97 @@
+// LECTURA Y ALMACENAMIENTO DE 20 MEDICIONES
+Loop,   Input
+        StoreI Ptr
+
+        Load Sum
+        AddI Ptr
+        Store Sum
+
+        Load Ptr
+        Add ONE
+        Store Ptr
+
+        Load Cont
+        Subt ONE
+        Store Cont
+        Skipcond 400
+        Jump Loop
+
+// PREPARAR DIVISIÓN: SUM / 20
+        Load Sum
+        Store A
+
+        Load N
+        Store B
+
+        Load ZERO
+        Store Total
+        Store NegA
+
+// COMPROBAR SI LA SUMA ES NEGATIVA
+        Load A
+        Skipcond 000
+        Jump Div
+
+        Load ZERO
+        Subt A
+        Store A
+
+        Load ONE
+        Store NegA
+
+// DIVISIÓN POR RESTAS SUCESIVAS
+Div,    Load A
+        Subt B
+        Skipcond 000
+        Jump Subtract
+        Jump Sign
+
+Subtract, Store A
+          Load Total
+          Add ONE
+          Store Total
+          Jump Div
+
+// RECUPERAR EL SIGNO DEL RESULTADO
+Sign,   Load NegA
+        Skipcond 400
+        Jump Negative
+        Jump Print
+
+Negative, Load ZERO
+          Subt Total
+          Store Total
+
+// MOSTRAR LA MEDIA
+Print,  Load Total
+        Output
+
+// REINICIAR PARA LAS SIGUIENTES 20 MEDICIONES
+        Load BASE
+        Store Ptr
+
+        Load N
+        Store Cont
+
+        Load ZERO
+        Store Sum
+        Store Total
+        Store A
+        Store B
+        Store NegA
+
+        Jump Loop
+
+// CONSTANTES Y VARIABLES
+ONE,    DEC 1
+ZERO,   DEC 0
+BASE,   HEX 050
+N,      DEC 20
+
+Ptr,    HEX 050 // mismo valor inicial que 'BASE'
+Cont,   DEC 20 // mismo valor inicial que 'N'
+Sum,    DEC 0
+A,      DEC 0
+B,      DEC 0
+Total,  DEC 0
+NegA,   DEC 0

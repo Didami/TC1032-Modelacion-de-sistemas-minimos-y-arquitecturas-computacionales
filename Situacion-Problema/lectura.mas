@@ -1,0 +1,24 @@
+Load BASE
+Store Ptr
+Load N
+StoreI data
+Store Cont
+
+loop, Input
+StoreI Ptr
+Load Ptr
+Add ONE
+Store Ptr
+Load Cont
+Subt ONE
+Store Cont
+Skipcond 400
+Jump loop
+Halt
+
+ONE, Dec 1
+BASE, Hex 021
+N, Dec 20
+Ptr, Hex 0
+Cont, Dec 0
+data, Hex 020

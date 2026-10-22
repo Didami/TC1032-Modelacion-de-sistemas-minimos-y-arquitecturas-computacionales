@@ -12,6 +12,10 @@ La carpeta [**`ej-clases`**](./ej-clases/) contiene los ejercicios realizados en
 
 Contiene la implementación de los códigos de ejemplo del libro de texto y la resolución de ejercicios prácticos utilizando el simulador de arquitectura MARIE JS.
 
+## Situación Problema:
+
+Contiene los archivos `.mar` de los programas realizados para la simulación descrita en el [reporte final](./Situacion-Problema/reporte_final.md).
+
 ### Estructura del Repositorio
 
 La carpeta [**`Tarea3`**](./Tarea3/) se encuentra organizada de la siguiente manera:
